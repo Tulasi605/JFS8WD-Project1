@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee Information Update</title>
+<link rel="stylesheet" th:href="@{/empUpdate-style.css}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body style="background-color:rgb(3, 54, 52);">
+<!-- NAVIGATION BAR -->
+<div class="navigation">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/displayAll">View All</a></li>
+          <li><a href="/forwardAdd">Add Employee</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- CONTAINER DISPLAY THE FORM -->
+    <div class="container">
+      <div class="addform">
+        <h3 class="heading">Update Employee Details</h3>
+        <!--linking with thymeleaf to get input from the user  -->
+                
+        <form action="#" th:action="@{/update}" th:object="${employees}" method="post">
+  			<div class="row">
+			  <div class="col-md-6">
+			  	<label>ID</label>
+			    <input type="text" th:field="*{id}" required class="form-control"/>
+			   </div>
+			   <div class="col-md-6">
+			   	<label>Name</label>
+		        <input type="text" th:field="*{name}" required class="form-control"/>
+		      </div>
+  			</div>
+  			<div class="row">
+			  <div class="col-md-6">
+			  	<label>Gender</label>
+			    <select th:field="*{gender}" class="form-control">
+                  <option value="--">--Select--</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+			   </div>
+			   <div class="col-md-6">
+			   	<label>Email</label>
+		        <input type="text" th:field="*{email}" required class="form-control"/>
+		      </div>
+  			</div>
+  			<div class="row">
+			  <div class="col-md-6">
+			  	<label>Location</label>
+			    <input type="text" th:field="*{location}" required class="form-control"/>
+			   </div>
+			   <div class="col-md-6">
+			   	<label>Mobile Number</label>
+		         <input type="text" th:field="*{phone}" required class="form-control"/>
+		      </div>
+  			</div><br>
+  			<input type="submit" value="Update" name="submit" class="button1"/>
+  		</form>
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+</body>
+</html>
